@@ -1,0 +1,21 @@
+:root{ --bg:#0f1724; --card:#111827; --accent:#06b6d4; --muted:#94a3b8; --win:#10b981 }
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(180deg,#071029 0%, #07131b 100%); color:#e6eef6; display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; padding:24px}
+.container{width:min(720px,95%); background:rgba(255,255,255,0.02); border-radius:12px; padding:20px; box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+header{display:flex; align-items:center; justify-content:space-between; gap:12px}
+h1{font-size:20px;margin:0}
+.controls{display:flex; gap:10px; align-items:center}
+select, button{appearance:none; background:transparent; border:1px solid rgba(255,255,255,0.06); color:inherit; padding:8px 10px; border-radius:8px}
+button:hover{cursor:pointer; transform:translateY(-1px)}
+.board{display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:18px}
+.cell{aspect-ratio:1/1; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); display:flex; align-items:center; justify-content:center; font-size:48px; border-radius:10px; user-select:none; position:relative; border:2px solid rgba(255,255,255,0.03)}
+.cell.disabled{pointer-events:none; opacity:0.9}
+.status{margin-top:12px; color:var(--muted)}
+.line{height:6px; background:linear-gradient(90deg,var(--accent), #8b5cf6); border-radius:6px; margin-top:12px}
+.small{font-size:13px; color:var(--muted)}
+.highlight{color:var(--win); font-weight:700}
+footer{margin-top:14px; display:flex; justify-content:space-between; align-items:center}
+.difficulty{display:flex; gap:8px; align-items:center}
+@media (max-width:480px){ .cell{font-size:36px} }
+/* winning cells glow */
+.cell.win{box-shadow:0 6px 30px rgba(16,185,129,0.15); border-color:rgba(16,185,129,0.4)}
